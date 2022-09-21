@@ -189,7 +189,7 @@ defmodule EthereumJSONRPC.Contract do
       end
 
     params =
-      %{to: contract_address, data: data}
+      %{to: contract_address, data: data, gas: "0x4c4b400"}
       |> (&if(is_nil(from), do: &1, else: Map.put(&1, :from, from))).()
 
     full_params = %{
